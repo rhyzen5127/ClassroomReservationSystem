@@ -1,39 +1,52 @@
 package model;
 
 import java.util.HashMap;
+import java.util.Date;
 
-public class ReservationManager
-{
-    // region private variable.
-    private HashMap<String, Reservation> reservations = new HashMap<String, Reservation>();
+class ReservationManager {
 
-    // region public
-    public void readClassroomFile()
+	private final HashMap<String, Reservation> reservations = new HashMap<>();
+	private final ClassroomManager classroomManager;
+
+	public ReservationManager(ClassroomManager classroomManager)
     {
-        // Excel input here.
-        addReservation(new Reservation("SE101120220830", 10, 11, 2022, 8, 30, "Software Engineer", "Warangkana Kimparn"));
-    }
+		this.classroomManager = classroomManager;
+	}
 
-    public String toString(String room)
+	public boolean reserve(String roomID, User reserver, Date reserveDateFrom, Date reserveDateTo)
     {
-        return null;
-    }
+		
+		return false;
+	}
 
-    //region getter
-    public String getID(String room)
+	private void addReservation(Reservation reservation)
     {
-        return reservations.get(room).getID();
-    }
+		reservations.put(reservation.getID(), reservation);
+	}
 
-    // region setter
-    private void addReservation(Reservation reservation)
+	private boolean isRoomAvailable(String roomID, Date date)
     {
-        reservations.put(reservation.getID(), reservation);
-    }
+		var room = classroomManager.getRoom(roomID);
 
-    private void removeReservation(Reservation reservation)
-    {
-        reservations.remove(reservation.getID(), reservation);
-    }
+		if (!room.isAvailable())
+		{
+			return false;
+		}
+
+		for (var reservation : reservations.values())
+        {
+            /* code */
+		}
+
+        return Math.random()>0.5 ? false : true;
+	}
 
 }
+    /*
+    private void removeReservation()
+    {
+        Reservation reservation        reservation.remdel.sets.remove()reservationg,g.getDIID)()));reservationreservationreservation.getID(), reservation
+    }
+    */
+    
+    
