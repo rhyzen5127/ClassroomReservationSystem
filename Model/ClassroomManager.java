@@ -24,45 +24,45 @@ public class ClassroomManager
     }
 
     //region getter
-    public String getRoomNumber(String room)
+    public Classroom getRoom(String id) 
     {
-        return classrooms.get(room).getRoomID();
+        return classrooms.get(id);
     }
 
-    public String getBuilding(String room)
+    public String getBuilding(String id)
     {
-        return classrooms.get(room).getBuildingID();
+        return classrooms.get(id).getBuildingID();
     }
 
-    public int[] getSize(String room)
+    public int[] getSize(String id)
     {
-        return classrooms.get(room).getSize();
+        return classrooms.get(id).getSize();
     }
 
-    public int getSeats(String room)
+    public int getSeats(String id)
     {
-        return classrooms.get(room).getSeats();
+        return classrooms.get(id).getSeats();
     }
 
     //region setter
-    public void setRoomID(String roomName, String room)
+    public void setRoomID(String id, String roomID)
     {
-        classrooms.get(room).setRoomID(roomName);
+        classrooms.get(id).setRoomID(roomID);
     }
 
-    public void setBuildingID(String room, String building)
+    public void setBuildingID(String id, String buildingID)
     {
-        classrooms.get(room).setBuildingID(building);
+        classrooms.get(id).setBuildingID(buildingID);
     }
 
-    public void setSize(String room, int width, int length)
+    public void setSize(String id, int width, int length)
     {
-        classrooms.get(room).setSize(width, length);
+        classrooms.get(id).setSize(width, length);
     }
 
-    public void setSeats(String room, int seats)
+    public void setSeats(String id, int seats)
     {
-        classrooms.get(room).setSeats(seats);
+        classrooms.get(id).setSeats(seats);
     }
 
     // register helper
