@@ -1,12 +1,13 @@
 package model;
 
+import java.util.Date;
+
 public class Reservation
 {
 
     // region private
     private String reservationID;
-    private int[] date = new int[3];
-    private int[] time = new int[2];
+    private Date date;
     private String subject = "";
     private String lecturer = "";
 
@@ -24,11 +25,7 @@ public class Reservation
         checkTime(hr, min);
         if(statusCode == 1) return;
         this.reservationID = id;
-        this.date[0] = dd;
-        this.date[1] = mm; 
-        this.date[2] = yyyy;
-        this.time[0] = hr;
-        this.time[1] = min;
+        this.date = new Date();
         this.subject = subject;
         this.lecturer = lecturer;
     }
@@ -53,6 +50,7 @@ public class Reservation
     }
 
     // region setter
+    /*
     public void setDate(int dd, int mm, int yyyy)
     {
         checkDate(dd, mm, yyyy);
@@ -69,6 +67,7 @@ public class Reservation
         this.time[0] = hr;
         this.time[1] = min;
     }
+    */
     
     // region getter
 
@@ -76,6 +75,7 @@ public class Reservation
         return reservationID;
     }
 
+    /*
     public int[] getDate()
     {
         return date;
@@ -110,6 +110,7 @@ public class Reservation
     {
         return time[0];
     }
+    */
 
     public String getSubject()
     {
