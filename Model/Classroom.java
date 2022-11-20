@@ -9,6 +9,7 @@ public class Classroom
     
     private int[] size = new int[2];
     private int seats;
+    private Status status = Status.AVAILABLE;
 
     /* 
      * Status type : 0 -> Normal
@@ -80,9 +81,11 @@ public class Classroom
         return statusCode;
     }
 
+    public boolean isAvailable() {
+        return this.status == Status.AVAILABLE;
+    }
     public enum Status {
         AVAILABLE,
-        ON_MAINTAINANCE,
-        IN_USE
+        ON_MAINTAINANCE
     }
 }
